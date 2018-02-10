@@ -22,20 +22,20 @@ void PrintChars(char design, int numChars);
 // ================================================================================================
 int main(void)
 {
-  auto int width;
-  auto int height;
-  auto char design;
-  auto int result;
+  	auto int width;
+  	auto int height;
+  	auto char design;
+	auto int result;
   
-  // Getting and checking width
-  printf("Please enter a positive box width: ");
-  result = scanf("%d", &width);
+	  // Getting and checking width
+  	printf("Please enter a positive box width: ");
+  	result = scanf("%d", &width);
   
-  if(1 != result)
-  {
-  	puts("Error reading the width...");
+  	if(1 != result)
+  	{
+  		puts("Error reading the width...");
 		exit(1);
-  }
+  	}
 	if(width == 0 || width > 80)
 	{
 		puts("Sorry, the width must be between 1 and 80 inclusive...");
