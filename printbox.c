@@ -15,7 +15,7 @@
 
 // function list
 void PrintBox(int width, int height, char design);
-void PrintChars(char design);
+void PrintChars(char design, int numChars);
 
 // == main ========================================================================================
 //
@@ -80,64 +80,33 @@ int main(void)
 // This function is responsible for drawing the box.
 //
 // INPUT:
-// 			int width [IN] -- width of box
-// 			int height [IN] -- height of box
-// 			char design [IN] -- character used to draw the box
+// 		int width [IN] -- width of box
+// 		int height [IN] -- height of box
+// 		char design [IN] -- character used to draw the box
 //
 // OUTPUT:
-// 			n/a
+// 		n/a
 // ==========================================================================================
 void PrintBox(int width, int height, char design)
 {
-		auto char fill = ' ';
-		auto char newline = '\n';
-		
-		// top
-		for(int a = 0; a < width; a++)
+	auto int counter;
+	PrintChars(design, width);
+	if(height > 1)
+	{
+		PrintChars('\n', 1)
+		for(counter = 1; counter <= (height - 2); ++ counter)
 		{
-				PrintChar(design);
+			PrintChars(design, 1);
+			PrintChars(' ', width-2);
+			if(width > 1)
+			{
+				PrintChars(design, 1);
+			}
+			PrintChars('\n', 1);
 		}
-		
-		PrintChars(newline);
-		
-		// sides
-		if(height == 1 || height == 2)
-		{
-				// if the height is 1 or 2, the top and bottom wil cover it, so height can be skipped
-		}
-		else
-		{
-				for(int b = 0; b < (height - 2); b++
-				{
-					PrintChars(design); // right side
-					if(width == 2)
-					{
-						PrintChars(design)l // left side
-					}
-					else if(width > 2)
-					{
-						for(int c = 0; c < (width - 2); c++)
-						{
-							PrintChars(fill); // making the box hollow
-						}
-						PrintChars(design); //left side
-				}
-				PrintChars(newline);
-		}
-		
-		// bottom
-		if(height == 2)
-		{
-				// if the height is 1, the top will cover it and this can be skipped
-		}
-		else
-		{
-				for(int d = 0; d < width; d++)
-				{
-					PrintChars(design);
-				}
-		}
-		PrintChars(newline);
+		PrintChars(design, width);
+	}
+	PrintChars('\n', 1);
 }
 
 // == PrintChars =============================================================================
@@ -149,7 +118,11 @@ void PrintBox(int width, int height, char design)
 // OUTPUT:
 //	 		n/a
 // ===========================================================================================
-void PrintChars(char design)
+void PrintChars(char design, int numChars)
 {
-		printf("%c", design);
+	auto int counter;
+	for(counter = 1; counter <= numChars; ++counter)
+	{
+		printf("%c", charVal);
+	}
 }
