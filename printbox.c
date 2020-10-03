@@ -22,10 +22,10 @@ void PrintChars(char design);
 // ================================================================================================
 int main(void)
 {
-  auto int width;
-  auto int height;
-  auto char design;
-  auto int result;
+  int width;
+  int height;
+  char design;
+  int result;
   
   // Getting and checking width
   printf("Please enter a positive box width: ");
@@ -89,13 +89,13 @@ int main(void)
 // ==========================================================================================
 void PrintBox(int width, int height, char design)
 {
-		auto char fill = ' ';
-		auto char newline = '\n';
+		char fill = ' ';
+		char newline = '\n';
 		
 		// top
 		for(int a = 0; a < width; a++)
 		{
-				PrintChar(design);
+				PrintChars(design);
 		}
 		
 		PrintChars(newline);
@@ -107,12 +107,12 @@ void PrintBox(int width, int height, char design)
 		}
 		else
 		{
-				for(int b = 0; b < (height - 2); b++
+				for(int b = 0; b < (height - 2);b++)
 				{
 					PrintChars(design); // right side
 					if(width == 2)
 					{
-						PrintChars(design)l // left side
+						PrintChars(design); // left side
 					}
 					else if(width > 2)
 					{
@@ -121,6 +121,7 @@ void PrintBox(int width, int height, char design)
 							PrintChars(fill); // making the box hollow
 						}
 						PrintChars(design); //left side
+					}
 				}
 				PrintChars(newline);
 		}
